@@ -1,7 +1,9 @@
 import java.util.Iterator;
+import java.util.List;
 
 public class MyArrayList<E> implements MyCollection<E> {
     private E[] values;
+//    private int elems;
 
     public MyArrayList() {
         values = (E[]) new Object[0];
@@ -53,4 +55,21 @@ public class MyArrayList<E> implements MyCollection<E> {
     public Iterator<E> iterator() {
         return new MyArrayIterator<>(values);
     }
+
+//    @Override
+//    public void bubbleSort(List<Integer> e) {
+//        int n = e.size();
+//        for (int i = 0; i < n - 1; i++) {
+//            boolean swapped = false;
+//            for (int j = 0; j < n - i - 1; j++) {
+//                if (e.get(j) > e.get(j + 1)) {
+//                    int temp = e.get(j);
+//                    e.set(j, e.get(j + 1));
+//                    e.set(j + 1, temp);
+//                    swapped = true;
+//                }
+//            }
+//            if (!swapped) break;
+//        }
+//    }
 }
