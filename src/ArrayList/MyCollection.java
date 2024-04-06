@@ -1,5 +1,9 @@
 package ArrayList;
 
+/*
+-->Дмитрий Борзунов
+->Кастомный интерейс коллекций.
+ */
 public interface MyCollection<E> extends Iterable<E> {
     boolean add(E e);
     void delete(int index);

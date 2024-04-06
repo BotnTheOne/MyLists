@@ -2,6 +2,11 @@ package ArrayList;
 
 import java.util.Iterator;
 
+/*
+-->Дмитрий Борзунов
+->Кастомный итерато был создан для понимания итерации по ArrayList.
+ */
+
 public class MyArrayIterator<E> implements Iterator<E> {
     private int index = 0;
     E[] values;

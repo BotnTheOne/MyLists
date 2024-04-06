@@ -1,10 +1,14 @@
 package LinkedList;
 
+import java.util.Iterator;
+
 /*
-End in 30:33
+-->Дмитрий Борзунов
+->Попытка создания кастомного LinkedList.
+->Примечание: старался, на сколько хватило знаний)))))
  */
 
-public class MyLinkedList<E> implements Linkeded<E> {
+public class MyLinkedList<E> implements Linkeded<E>, Iterable<E>,DescendingIterator<E> {
     private Node<E> firstNode;
     private Node<E> lastNode;
     private int size = 0;
@@ -25,7 +29,11 @@ public class MyLinkedList<E> implements Linkeded<E> {
 
     @Override
     public void addFirst(E e) {
-
+        Node<E> next = firstNode;
+        next.setCurrentElem(e);
+        firstNode = new Node<>(null, null, next);
+        next.setPreviousElem(firstNode);
+        size++;
     }
 
     @Override
@@ -46,10 +54,44 @@ public class MyLinkedList<E> implements Linkeded<E> {
         return current.getNextElem();
     }
 
+    @Override
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            int counter = 0;
+
+            @Override
+            public boolean hasNext() {
+                return counter < size;
+            }
+
+            @Override
+            public E next() {
+                return getElementByIndex(counter++);
+            }
+        };
+    }
+
+    @Override
+    public Iterator<E> descendingIterator() {
+        return new Iterator<E>() {
+            int counter = size - 1;
+            @Override
+            public boolean hasNext() {
+                return counter >= 0;
+            }
+
+            @Override
+            public E next() {
+                return getElementByIndex(counter--);
+            }
+        };
+    }
+
     private class Node<E> {
         private E currentElem;
         private Node<E> nextElem;
         private Node<E> previousElem;
+
 
         public Node(E currentElem, Node<E> nextElem, Node<E> previousElem) {
             this.currentElem = currentElem;

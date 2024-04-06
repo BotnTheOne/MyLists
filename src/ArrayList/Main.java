@@ -1,6 +1,9 @@
 package ArrayList;
 
-import LinkedList.MyLinkedList;
+/*
+-->Дмитрий Борзунов
+->Ручное тестирование функционала кастомного ArrayList.
+ */
 
 public class Main {
     public static void main(String[] args) {

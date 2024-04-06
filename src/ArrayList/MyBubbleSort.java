@@ -1,5 +1,10 @@
 package ArrayList;
 
+/*
+-->Дмитрий Борзунов
+->Кастомная сортировка пузырьком.
+ */
+
 public class MyBubbleSort {
 
     static void bubbleSort(MyArrayList<Integer> e) {

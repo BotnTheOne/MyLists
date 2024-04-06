@@ -2,6 +2,12 @@ package ArrayList;
 
 import java.util.Iterator;
 
+/*
+-->Дмитрий Борзунов
+->Кастомный ArrayList.
+->Примечание: не реализовал метод addAll.
+ */
+
 public class MyArrayList<E> implements MyCollection<E> {
     private E[] values;
 
